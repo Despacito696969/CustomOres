@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "custom_ores",
+  "version": "${version}",
+  "name": "Custom ores",
+  "description": "Adds ability to add custom ores using config",
+  "authors": [
+    "Despacito696969"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/custom_ores/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "org.despacito696969.custom_ores.CustomOres"
+    ]
+  },
+  "mixins": [
+    "custom_ores.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
