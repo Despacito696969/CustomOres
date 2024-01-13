@@ -99,8 +99,11 @@ public class CustomOres implements ModInitializer {
             return;
         }
 
-        TagKey<Biome> tag = TagKey.create(Registries.BIOME, new ResourceLocation(mod_id, biome_tag));
-        var key = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(mod_id, name));
+        var biome_tag_loc = new ResourceLocation(biome_tag);
+        var feature_loc = new ResourceLocation(name);
+
+        TagKey<Biome> tag = TagKey.create(Registries.BIOME, biome_tag_loc);
+        var key = ResourceKey.create(Registries.PLACED_FEATURE, feature_loc);
         BiomeModifications.addFeature(BiomeSelectors.tag(tag), GenerationStep.Decoration.UNDERGROUND_ORES, key);
     }
 }
