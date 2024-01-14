@@ -7,6 +7,8 @@ import com.google.gson.JsonParser;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -32,6 +34,10 @@ public class CustomOres implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        loadOres();
+    }
+
+    public void loadOres() {
         Path config_path = FabricLoader.getInstance().getConfigDir().resolve(CONFIG_FILE_NAME);
         File config_file = config_path.toFile();
         Reader reader = null;

@@ -10,7 +10,7 @@
   "contact": {},
   "license": "MIT",
   "icon": "assets/custom_ores/icon.png",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "main": [
       "org.despacito696969.custom_ores.CustomOres"
